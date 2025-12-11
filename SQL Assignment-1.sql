@@ -31,49 +31,50 @@ SELECT *
 FROM Employees;
 
 #--Question 1 : Show employees working in either the ‘IT’ or ‘HR’ departments.
-SELECT *
+SELECT  EmpName, Department
 FROM Employees
 WHERE Department = "IT" OR Department = "HR";
 
 
 #--Question 2 : Retrieve employees whose department is in ‘Sales’, ‘IT’, or ‘Finance’.
-SELECT *
+SELECT  EmpName, Department
 FROM Employees
 WHERE Department IN ("Sales","IT","Finance");
 
 
 #--Question 3 : Display employees whose salary is between ₹50,000 and ₹70,000.
-SELECT *
+SELECT EmpName, Salary
 FROM Employees
 WHERE Salary BETWEEN 50000 AND 70000;
 
 
 #--Question 4 : List employees whose names start with the letter ‘A’.
-SELECT *
+SELECT EmpName
 FROM Employees
 WHERE EMPName LIKE "A%";
 
 
 #--Question 5 : Find employees whose names contain the substring ‘an’.
-SELECT *
+SELECT EmpName
 FROM Employees
 WHERE EMPName LIKE "%an%";
 
 
 #--Question 6 : Show employees who are from ‘Delhi’ or ‘Mumbai’ and earn more than ₹55,000.
-SELECT *
+SELECT EmpName, City, Salary
 FROM Employees
-WHERE (City = "Delhi" or City = "Mumbai") AND Salary > 55000;
+WHERE (City = "Delhi" or City = "Mumbai")
+  AND Salary > 55000;
 
 
 #--Question 7 : Display all employees except those from the ‘HR’ department.
-SELECT *
+SELECT EmpName, Department
 FROM Employees
 WHERE Department <> "HR";
 
 
 #--Question 8 : Get all employees hired between 2019 and 2022, ordered by HireDate (oldest first).
-SELECT *
+SELECT EmpName, HireDate
 FROM Employees
-WHERE YEAR(HireDate) BETWEEN 2019 AND 2022
+WHERE HireDate BETWEEN '2019-01-01' AND '2022-12-31'
 ORDER BY HireDate;
